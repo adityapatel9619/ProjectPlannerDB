@@ -1,4 +1,7 @@
-IF EXISTS(SELECT 1 FROM sys.all_objects  WHERE name LIKE '%VW_RegistrationDetails%')
+USE [ProjectPlanner]
+GO
+
+IF EXISTS(SELECT 1 FROM sys.all_objects  WHERE name = 'VW_RegistrationDetails')
 BEGIN
 		DROP VIEW VW_RegistrationDetails
 END
