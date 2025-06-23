@@ -36,3 +36,22 @@ BEGIN
 
 		PRINT  'Table -> PP_Department -> Data Inserted'
 END
+
+GO
+
+IF NOT EXISTS(SELECT 1 FROM sys.all_objects WHERE name = 'PP_NewEmployee_Register' AND type = 'U')
+BEGIN
+		CREATE TABLE PP_NewEmployee_Register
+		(
+			nID INT IDENTITY(1,1) PRIMARY KEY,
+			sName  VARCHAR(100),
+			sEmail VARCHAR(100),
+			sPhone VARCHAR(12),
+			nDept  INT,
+			dRegisterDate DATETIME,
+			bIsEmpUpdated BIT,
+			bIsActive BIT
+		)
+
+		PRINT  'Table -> PP_NewEmployee_Register -> Created'
+END
